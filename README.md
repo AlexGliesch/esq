@@ -29,9 +29,9 @@ where
 - `x` is any identifier defined by the user.
 
 The interpreter also has the following special commands:
-- `reset`: cleans the global context,
-- `load {fileName}`: loads the given file and executes every command in it,
-- `quit`: quits the interpreter.
+- `reset` cleans the global context,
+- `load {fileName}` loads the given file and executes every command in it,
+- `quit` quits the interpreter.
 
 For details about language semantics, see `report.pdf`, and for more about the Scheme language, see https://www.scheme.com/tspl4/.
 
