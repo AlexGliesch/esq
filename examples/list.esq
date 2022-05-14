@@ -1,0 +1,23 @@
+load standard_library.esq
+
+(define append (lambda:[int] (la:[int] lb:[int]) 
+	(if (empty? la) 
+		lb 
+		(cons (first la) (append (rest la) lb)))))
+
+(define map (lambda:[int] (l:[int] f:int->int) 
+	(if (empty? l)
+		empty
+		(cons (f (first l)) (map (rest l) f)))))
+
+(define fold (lambda:int (l:[int] f:int,int->int i:int) 
+	(if (empty? l)
+		i
+		(f (first l) (fold (rest l) f i)))))
+
+(define filter (lambda:[int] (l:[int] f:int->bool) 
+	(if (empty? l)
+		empty
+		(if (f (first l))
+			(cons (first l) (filter (rest l) f))
+			(filter (rest l) f)))))

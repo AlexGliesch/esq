@@ -1,0 +1,39 @@
+load standard_library.esq
+load list.esq
+
+(define mergesort
+	(local (
+			(define mergelists
+				(lambda:[int] (l1:[int] l2:[int])
+				  	(if (empty? l1)
+				     	 l2
+				      	(if (empty? l2)
+				         	 l1
+				         	 (if (< (first l1) (first l2))
+				            	  (cons (first l1) (mergelists (rest l1) l2))
+				            	  (cons (first l2) (mergelists (rest l2) l1)))))))
+
+			(define evennumbers
+				(lambda:[int] (l:[int])
+				  	(if (empty? l)
+				    	empty
+				     	(if (empty? (rest l))
+				        	empty
+				         	(cons (first (rest l)) (evennumbers (rest (rest l))))))))
+
+			(define oddnumbers
+				(lambda:[int] (l:[int])
+				  	(if (empty? l)
+				     	empty
+				      	(if (empty? (rest l))
+				          	(list (first l))
+				          	(cons (first l) (oddnumbers (rest (rest l))))))))
+			)
+			(lambda:[int] (l:[int])
+			  	(if (empty? l)
+			      	l
+			     	 (if (empty? (rest l))
+			         	 l
+			         	 (mergelists
+				          	(mergesort (oddnumbers l))
+			           	 	(mergesort (evennumbers l))))))))

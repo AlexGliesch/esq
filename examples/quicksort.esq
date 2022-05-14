@@ -1,0 +1,21 @@
+load standard_library.esq
+load list.esq
+
+
+(define smaller (lambda:[int] (x:int l:[int]) 
+	(filter l (lambda:bool (y:int) (< y x)))))
+
+(define larger (lambda:[int] (x:int l:[int]) 
+	(filter l (lambda:bool (y:int) (> y x)))))
+
+(define quicksort (lambda:[int] (l:[int]) 
+	(if (empty? l) 
+		empty 
+		(append (append (quicksort (smaller (first l) (rest l)))
+						(list (first l)))				
+				(quicksort (larger (first l) (rest l)))))))
+
+
+(define large-array (list 129834 123987 2398 35 123 3 1 35 1235 23 532 532 23 
+	23 23 52 231 213 523 5 3 634 634 6 234 643 7 5478 54 31 745 7 547 47 42
+	57 2457 42 7 245 724 574 3257 246 13 21))

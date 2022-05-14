@@ -1,0 +1,17 @@
+
+(define >= (lambda:bool (x:int y:int) (not (< x y))))
+
+(define > (lambda:bool (x:int y:int) (< y x)))
+
+(define <= (lambda:bool (x:int y:int) (not (< y x))))
+
+(define == (lambda:bool (x:int y:int) (and (>= x y) (<= x y))))
+
+(define != (lambda:bool (x:int y:int) (not (== x y))))
+
+(define or (lambda:bool (x:bool y:bool) (not (and (not x) (not y)))))
+
+(define / (lambda:int (x:int y:int) 
+	(if (<= x 1)
+		1
+		(+ 1 (/ (- x y) y)))))		
