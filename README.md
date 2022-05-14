@@ -1,6 +1,8 @@
 # A partial, statically-typed Scheme interpreter
 
-This is an implementation of a subset of the [Scheme](https://www.scheme.com/tspl4/) language, but with a static type-checker. Created for the course INF05516-Formal Semantics at INF/UFRGS, in December 2013. The project was unanimously voted by 25 colleagues as the best project in the class.
+This is an implementation of a subset of the [Scheme](https://www.scheme.com/tspl4/) language, but with a static type-checker. Created for the course INF05516-Formal Semantics at INF/UFRGS, in December 2013. 
+
+The project was unanimously voted by 25 colleagues as the best project in the class.
 
 ## Implemented features
 
